@@ -2,7 +2,7 @@
   width: 100%;
   height: 90vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -10,8 +10,98 @@
   overflow: hidden;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 50%;
+}
+
+.socials {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials-wheel {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+  animation: circulate 50s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphic {
+  width: 50%;
+  height: auto;
+  animation: circulate 50s linear infinite reverse;
+}
+
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+#linkedin {
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.icon-wrapper svg {
+  width: 70%;
+  transition: all 0.3s ease 0s;
+  animation: circulate 50s linear infinite reverse;
+}
+
+#github {
+  left: 0;
+  top: 86.6%;
+  transform: translate(0%, -100%);
+}
+
+#gmail {
+  right: 0;
+  top: 86.6%;
+  transform: translate(0%, -100%);
+}
+
+.icon-wrapper:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0px 8px 15px var(--blueShadow);
+}
+
+.icon-wrapper:hover .icon-social path {
+  fill: white;
+}
+
+@keyframes circulate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .name {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -21,7 +111,7 @@
   font-size: 75px;
 }
 
-.name span:nth-child(2) {
+.name-in span:nth-child(1) {
   color: var(--blue);
   font-weight: 600;
 }
@@ -56,49 +146,6 @@
   z-index: -1;
   filter: blur(4px);
   animation: orbit 30s linear infinite;
-}
-
-.b1 {
-  background-color: var(--blue);
-  left: 10%;
-  top: 10%;
-}
-
-.b2 {
-  background-color: var(--red);
-  left: 50%;
-  top: 50%;
-}
-
-.b3 {
-  background-color: var(--blue);
-  left: 80%;
-  top: 40%;
-}
-.b4 {
-  background-color: var(--red);
-  left: 60%;
-  top: 70%;
-}
-.b5 {
-  background-color: var(--blue);
-  left: 40%;
-  top: 80%;
-}
-.b6 {
-  background-color: var(--red);
-  left: 30%;
-  top: 70%;
-}
-.b7 {
-  background-color: var(--blue);
-  left: 55%;
-  top: 55%;
-}
-.b8 {
-  background-color: var(--red);
-  left: 80%;
-  top: 80%;
 }
 
 /* .orbitball::before {
